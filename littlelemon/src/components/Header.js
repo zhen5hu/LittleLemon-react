@@ -1,16 +1,16 @@
 import React from 'react';
 import logo from '../images/Logo.jpg';
-import {HStack} from "@chakra-ui/react";
+import { Link } from 'react-router-dom';
 
 const Header = () => (
-    <HStack className='header'>
+    <ul className='header'>
         <img src={logo} alt="Logo" width="20%"/>
-        <li><a href='index.html'>Home</a></li>
-        <li><a href='url2'>About</a></li>
-        <li><a href='url3'>Menu</a></li>
-        <li><a href='url4'>Reservations</a></li>
-        <li><a href='url5'>Order Online</a></li>
-        <li><a href='url6'>Login</a></li>
-    </HStack>
+        <Link to="/" className='LK'>Home</Link>
+        <Link to="/about" className='LK'>About</Link>
+        <Link to="/menu" className='LK'>Menu</Link>
+        <Link to="/booking" className='LK'>Reservation</Link>
+        <Link to="/order" className='LK'>Order Online</Link>
+        <Link to="/login" className='LK'>Login</Link>
+    </ul>
 )
 export default Header;

@@ -9,10 +9,10 @@ const Card = ({ title, description, imageSrc, price}) => {
   }
   return (
     <>
-        <Box bg= '#EDEFEE' borderRadius='1rem' width="20%">
+        <Box bg= '#EDEFEE' borderRadius='1rem' width="18rem">
           <Image src={imageSrc} alt="images" borderRadius="1rem" width="100%"/>
           <HStack style={styles} justifyContent="space-between">
-            <Heading fontSize="0.9vw">{title}</Heading>
+            <Heading fontSize="1rem">{title}</Heading>
             <Text color="#EE9972">{price}</Text>
           </HStack>
           <Text style={styles}>{description}</Text>

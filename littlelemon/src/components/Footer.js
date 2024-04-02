@@ -1,31 +1,32 @@
 import React from 'react';
 import logo from '../images/Logo.jpg';
-import {HStack,VStack} from "@chakra-ui/react";
+import {VStack} from "@chakra-ui/react";
+import { Link } from 'react-router-dom';
 
 const Footer = () => (
-    <HStack className='footer' alignItems='flex-start'>
+    <section className='footer'>
         <img src={logo} alt="Logo" width="20%"/>
         <VStack alignItems='flex-start'>
             <h3 className='margin-b' >Navigation</h3>
-            <li><a href='url1'>Home</a></li>
-            <li><a href='url2'>About</a></li>
-            <li><a href='url3'>Menu</a></li>
-            <li><a href='url4'>Reservations</a></li>
-            <li><a href='url5'>Order Online</a></li>
-            <li><a href='url6'>Login</a></li>
+            <Link to="/" className='LK'>Home</Link>
+            <Link to="/about" className='LK'>About</Link>
+            <Link to="/menu" className='LK'>Menu</Link>
+            <Link to="/booking" className='LK'>Reservation</Link>
+            <Link to="/order" className='LK'>Order Online</Link>
+            <Link to="/login" className='LK'>Login</Link>
         </VStack>
         <VStack alignItems='flex-start'>
             <h3 className='margin-b'>Contact</h3>
-            <li><a href='url7'>Address</a></li>
-            <li><a href='url8'>Phone Number</a></li>
-            <li><a href='url9'>Email</a></li>
+            <Link to="/address" className='LK'>Address</Link>
+            <Link to="/phone" className='LK'>Phone Number</Link>
+            <Link to="/email" className='LK'>Email</Link>
         </VStack>
         <VStack alignItems='flex-start'>
             <h3 className='margin-b'>Social Media</h3>
-            <li><a href='url10'>Facebook</a></li>
-            <li><a href='ur11'>Instagram</a></li>
-            <li><a href='url12'>Website</a></li>
+            <Link to="/facebook" className='LK'>Facebook</Link>
+            <Link to="/instagram" className='LK'>Instagram</Link>
+            <Link to="/website" className='LK'>Website</Link>
         </VStack>
-    </HStack>
+    </section>
 )
 export default Footer;

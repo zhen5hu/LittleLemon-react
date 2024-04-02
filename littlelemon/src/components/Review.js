@@ -9,7 +9,7 @@ const Review = ({name, photo, review}) => {
   }
   return (
     <>
-      <Box bg= '#EDEFEE' borderRadius='0.5rem' width='20%'>
+      <Box bg= '#EDEFEE' borderRadius='0.5rem' width='15rem'>
           <Image src={star} alt="stars" width="8%" marginTop="5%"></Image>
           <Image src={star} alt="stars" width="8%"></Image>
           <Image src={star} alt="stars" width="8%"></Image>

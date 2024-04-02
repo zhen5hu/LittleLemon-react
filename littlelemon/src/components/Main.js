@@ -51,16 +51,14 @@ const foodcards = [
 
 const Main = () => (
     <main>
-        <section>
-            <HStack className='hero'>
-                <article className='textbox'>
-                    <h1 className='margin-b'>Little Lemon</h1>
-                    <h2 className='margin-t'>Chicago</h2>
-                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h3>
-                    <button>Reserve Now</button>
-                </article>
-                <Image src={restaurantfood} alt="cover" borderRadius="1vw" height="70%" width="25%"/>
-            </HStack>
+        <section className='hero'>
+            <article className='textbox'>
+                <h1 className='margin-b'>Little Lemon</h1>
+                <h2 className='margin-t'>Chicago</h2>
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h3>
+                <button>Reserve Now</button>
+            </article>
+            <Image src={restaurantfood} alt="cover" borderRadius="1vw" height="70%" width="25%"/>
         </section>
         <section className='highlight'>
             <HStack className='HS'>
@@ -80,7 +78,7 @@ const Main = () => (
             </HStack>
         </section>
         <section className='testimonial'>
-            <h1>Recent Reviews</h1>
+            <h1 className='margin-t'>Recent Reviews</h1>
             <HStack className='HS'>
                 {rankings.map((ranking) => (
                     <Review
