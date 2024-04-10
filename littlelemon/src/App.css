@@ -74,6 +74,21 @@
   justify-content: space-between;
 }
 
+.hero2, .form, .confirm{
+  display: grid;
+  justify-content: center;
+}
+
+.hero2 {
+  background-image: url(./images/restaurant.jpg);
+  background-size: cover;
+  height: 15rem;
+}
+
+.hero2 p, .hero2 h1 {
+  background-color: whitesmoke;
+}
+
 .margin-b {
   margin-bottom: 0;
 }

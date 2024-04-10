@@ -11,9 +11,10 @@ function BookingForm({availableTimes,dispatch}) {
 
     const [date, setDate] = useState('');
     const [time, setTime] = useState('17:00');
-    const [guest, setGuest] = useState('1');
+    const [guest, setGuest] = useState('');
     const [occasion, setOccasion] = useState('General');
     const [submission, setSubmission] = useState(null);
+    const [error, setError] = useState(null);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,6 +26,7 @@ function BookingForm({availableTimes,dispatch}) {
             }
         }).catch(error => {
             console.error('Submission failed:',error);
+            setError(true);
         });
     };
 
@@ -47,16 +49,16 @@ function BookingForm({availableTimes,dispatch}) {
 
     return (
         <form style={styles} onSubmit={handleSubmit}>
-            <label htmlFor="res-date">Date *</label>
-            <input type="date" id="res-date" value={date} onChange={(e) => setDate(e.target.value)}/>
+            <label htmlFor="res-date" >Date *</label>
+            <input type="date" id="res-date" value={date} onChange={(e) => setDate(e.target.value)} required/>
             <label htmlFor="res-time">Time *</label>
-            <select id="res-time" value={time} onChange={(e) => setTime(e.target.value)}>
+            <select id="res-time" value={time} onChange={(e) => setTime(e.target.value)} required>
                 {availableTimes.map((availableTime)=>(
                     <option key={availableTime} value={availableTime}>{availableTime}</option>
                 ))}
             </select>
             <label htmlFor="guests">Number of Guests *</label>
-            <input type="number" min="1" max="8" id="guests" value={guest} onChange={(e) => setGuest(e.target.value)}/>
+            <input type="number" min="1" max="8" id="guests" value={guest} onChange={(e) => setGuest(e.target.value)} required/>
             <label htmlFor="occasion">Occasion</label>
             <select id="occasion" value={occasion} onChange={(e) => setOccasion(e.target.value)}>
                 <option>General</option>
@@ -65,7 +67,8 @@ function BookingForm({availableTimes,dispatch}) {
                 <option>Anniversary</option>
                 <option>Graduation</option>
             </select>
-            <input type="submit" value="Book Now"/>
+            <input type="submit" value="Book Now" aria-label="On Click"/>
+            {error && <p>Please make sure to select all required information!</p>}
         </form>
     );
   }
