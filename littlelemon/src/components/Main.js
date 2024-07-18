@@ -2,7 +2,7 @@ import React, {useReducer } from 'react';
 import HomePage from "./HomePage";
 import BookingPage from "./BookingPage";
 import ConfirmBooking from "./ConfirmedBooking";
-import {Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 const Main = () => {
     function updateTimes(state, action){
@@ -21,11 +21,13 @@ const Main = () => {
     const [availableTimes, dispatch] = useReducer(updateTimes,initializeTimes());
 
     return (
-    <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch}/>} />
-        <Route path="/confirm" element={<ConfirmBooking/>} />
-    </Routes>
+        <Router>
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch}/>} />
+                <Route path="/confirm" element={<ConfirmBooking/>} />
+            </Routes>
+        </Router>
     );
 };
 export default Main;

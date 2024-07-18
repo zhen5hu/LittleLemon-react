@@ -4,6 +4,7 @@ import chef from '../images/restaurant chef B.jpg';
 import {HStack,Image} from "@chakra-ui/react";
 import Card from "./Card";
 import Review from "./Review";
+import { Link } from 'react-router-dom';
 
 const foodcards = [
     {
@@ -56,7 +57,7 @@ const HomePage = () => (
                 <h1 className='margin-b'>Little Lemon</h1>
                 <h2 className='margin-t'>Chicago</h2>
                 <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h3>
-                <button>Reserve Now</button>
+                <Link to="/booking"><button>Reserve Now</button></Link>
             </article>
             <Image src={restaurantfood} alt="cover" borderRadius="1vw" height="70%" width="25%"/>
         </section>
